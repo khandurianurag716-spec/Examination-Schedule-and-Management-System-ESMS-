@@ -1,0 +1,6 @@
+{
+  "name": "GEHU Examination Schedule & Management System (ESMS)",
+  "description": "Centralized university examination scheduling, marks entry, result publication, and revaluation management system for Graphic Era Hill University.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
