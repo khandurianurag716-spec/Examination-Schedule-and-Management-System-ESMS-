@@ -2,7 +2,7 @@
 
 **Graphic Era Hill University (GEHU) — B.Tech CSE Project-Based Learning (PBL)**
 
-A full-stack university Examination Schedule and Management System built for **Graphic Era Hill University**, organized cleanly into four independent team modules covering Web Frontend, Backend APIs, SQLite Relational Database, C Data Structures & Algorithms, and C++ Object-Oriented Programming.
+A university Examination Schedule and Management System developed for **Graphic Era Hill University**. The project is organized into four independent team modules covering Web Frontend, Backend, SQLite Relational Database, C Data Structures & Algorithms, and C++ Object-Oriented Programming.
 
 ---
 
@@ -11,39 +11,39 @@ A full-stack university Examination Schedule and Management System built for **G
 ```text
 ESMS/
 ├── backend/
-│   ├── database/db.ts          # SQLite connection, schema init & bcrypt seed
-│   ├── middleware/auth.ts      # Session token verification & role-based guards
+│   ├── database/db.ts
+│   ├── middleware/auth.ts
 │   └── routes/
-│       ├── authRoutes.ts       # Common login, logout, session validation
-│       ├── studentRoutes.ts    # Member 1: Student APIs
-│       ├── facultyRoutes.ts    # Member 2: Faculty APIs
-│       └── adminRoutes.ts      # Member 3: Admin APIs & transactional revaluation
+│       ├── authRoutes.ts
+│       ├── studentRoutes.ts
+│       ├── facultyRoutes.ts
+│       └── adminRoutes.ts
 ├── database/
-│   ├── schema.sql              # 14 normalized SQL tables with FKs & constraints
-│   └── seed.sql                # Reference seed data for courses & subjects
+│   ├── schema.sql
+│   └── seed.sql
 ├── dsa/
-│   ├── dsa.h                   # C structures & DSA prototypes
-│   └── dsa.c                   # Arrays, Linear Search, Bubble Sort, Singly Linked List
+│   ├── dsa.h
+│   └── dsa.c
 ├── oop/
-│   ├── User.h / User.cpp       # Base class (Encapsulation & virtual methods)
-│   ├── Student.h / Student.cpp # Derived Student class
-│   ├── Faculty.h / Faculty.cpp # Derived Faculty class
-│   ├── Admin.h / Admin.cpp     # Derived Admin class
-│   └── main.cpp                # Runtime polymorphism demonstration
-├── public/                     # Place official GEHU logo here as gehu-logo.png
+│   ├── User.h / User.cpp
+│   ├── Student.h / Student.cpp
+│   ├── Faculty.h / Faculty.cpp
+│   ├── Admin.h / Admin.cpp
+│   └── main.cpp
+├── public/
 ├── src/
 │   ├── components/
-│   │   ├── Layout.tsx          # Portal shell, sidebar & header
-│   │   ├── LoginPage.tsx       # Role-based university login
-│   │   ├── student/            # Member 1 UI components
-│   │   ├── faculty/            # Member 2 UI components
-│   │   ├── admin/              # Member 3 UI components
-│   │   └── ui/                 # GehuLogo, StatusIndicator, ConfirmDialog
-│   ├── services/api.ts         # Fetch helper with Bearer session auth
-│   └── types/esms.ts           # TypeScript domain interfaces
+│   │   ├── Layout.tsx
+│   │   ├── LoginPage.tsx
+│   │   ├── student/
+│   │   ├── faculty/
+│   │   ├── admin/
+│   │   └── ui/
+│   ├── services/
+│   └── types/esms.ts
 ├── docs/
-│   └── PROJECT_DOCUMENTATION.md # Complete project report & Viva Q&A
-├── server.ts                   # Express + Vite server entrypoint (Port 3000)
+│   └── PROJECT_DOCUMENTATION.md
+├── server.ts
 ├── package.json
 └── .env.example
 ```
@@ -52,36 +52,48 @@ ESMS/
 
 ## Official University Logo Setup
 
-Place the exact official **Graphic Era Hill University** logo image at:
+Place the official **Graphic Era Hill University** logo image at:
 
 ```text
 public/gehu-logo.png
 ```
 
-Once placed there, the logo is automatically displayed with its original aspect ratio on the login page, portal header/sidebar, student printable marksheets, and university administration reports.
+The logo is displayed on the login page, portal header, sidebar, student printable marksheets, and university administration reports while maintaining its original aspect ratio.
 
 ---
 
 ## Installation & Running Locally
 
 ### 1. Install Dependencies
+
 ```bash
 npm install
 ```
 
 ### 2. Environment Configuration
-Copy `.env.example` to `.env` (optional; sensible defaults are built in):
+
+Copy `.env.example` to `.env` (optional; default settings are provided).
+
 ```bash
 cp .env.example .env
 ```
 
-### 3. Start the Application (Backend + Frontend + SQLite Auto-Seed)
+### 3. Start the Application
+
 ```bash
 npm run dev
 ```
-The server starts on `http://localhost:3000`. On first run, `backend/database/db.ts` executes `database/schema.sql` and seeds initial demo accounts into `esms.db`.
+
+The application starts at:
+
+```text
+http://localhost:3000
+```
+
+On the first run, the database connection file initializes the database using `database/schema.sql` and inserts the initial demo accounts into `esms.db`.
 
 ### 4. Build & Type-Check
+
 ```bash
 npm run lint
 npm run build
@@ -89,12 +101,12 @@ npm run build
 
 ---
 
-## Seeded Demo Accounts (Evaluation & Viva)
+## Demo Accounts (Evaluation & Viva)
 
-All initial seeded accounts use bcrypt-hashed passwords stored in `esms.db`.
+The initial accounts use securely hashed passwords stored in the database.
 
 | Role | ID / Username | Password | Name |
-| :--- | :--- | :--- | :--- |
+|---|---|---|---|
 | **Admin** | `admin` | `gehu@2026` | Controller of Examinations |
 | **Faculty** | `FAC101` | `gehu@2026` | Dr. Rajesh Sharma |
 | **Faculty** | `FAC102` | `gehu@2026` | Prof. Meenakshi Rawat |
@@ -107,12 +119,14 @@ All initial seeded accounts use bcrypt-hashed passwords stored in `esms.db`.
 ## Compiling & Running C DSA and C++ OOP Modules
 
 ### C Data Structures & Algorithms (`dsa/`)
+
 ```bash
 gcc dsa/dsa.c -o dsa_demo
 ./dsa_demo
 ```
 
 ### C++ Object-Oriented Programming (`oop/`)
+
 ```bash
 g++ oop/User.cpp oop/Student.cpp oop/Faculty.cpp oop/Admin.cpp oop/main.cpp -o oop_demo
 ./oop_demo
@@ -122,7 +136,10 @@ g++ oop/User.cpp oop/Student.cpp oop/Faculty.cpp oop/Admin.cpp oop/main.cpp -o o
 
 ## End-to-End Testing Checklist
 
-1. **Workflow 1 (Admin)**: Log in as `admin`, create a new student, add a faculty member, create a subject, assign the subject, and verify updated dashboard counts.
-2. **Workflow 2 (Faculty)**: Log in as `FAC101`, view assigned subjects and students, schedule an examination, and enter marks (verify negative or over-max marks are rejected).
-3. **Workflow 3 (Student)**: Log in as `GEHU2024001`, check profile, enrolled subjects, examination schedule filters, and published marksheet.
-4. **Workflow 4 (Revaluation)**: As `GEHU2024001`, submit a revaluation request for `TCS-402`; log in as `admin` to assign it to `FAC101`; log in as `FAC101` to submit recommended marks & remarks; log in as `admin` to approve & publish revised marks; log in as `GEHU2024001` to verify the updated result and `Completed` status.
+1. **Workflow 1 (Admin):** Log in as `admin`, create a new student, add a faculty member, create a subject, assign the subject, and verify updated dashboard counts.
+
+2. **Workflow 2 (Faculty):** Log in as `FAC101`, view assigned subjects and students, schedule an examination, and enter marks. Verify that negative or over-maximum marks are rejected.
+
+3. **Workflow 3 (Student):** Log in as `GEHU2024001`, check the profile, enrolled subjects, examination schedule filters, and published marksheet.
+
+4. **Workflow 4 (Revaluation):** Log in as `GEHU2024001` and submit a revaluation request for `TCS-402`. Log in as `admin` to assign it to `FAC101`. Log in as `FAC101` to submit recommended marks and remarks. Finally, log in as `admin` to approve and publish revised marks, then verify the updated result and `Completed` status using the student account.
